@@ -16,7 +16,6 @@ function Index() {
             <header className='bg-gradient-to-r from-gray-500 to-gray-400 w-full text-white font-bold tracking-wide text-sm'>
                 <div className="header-wrapper flex align-middle justify-around max-w-7xl h-full mx-auto py-3">
                     <div className='flex align-middle'>
-                        <img src={process.env.PUBLIC_URL + '/assets/icon.png'} alt=''></img>
                         <h1 className='cursor-pointer text-white text-3xl font-black tracking-wider'>ImaFX</h1>
                         <i className='fa-solid fa-trademark text-xs'></i>
                     </div>
