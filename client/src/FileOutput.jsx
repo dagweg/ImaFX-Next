@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import '../styles/fileOutput.css';
-import { Waveform } from "@uiball/loaders"
+import './styles/fileOutput.css';
 import { Ripples } from '@uiball/loaders'
-
-
 
 function FileOutput({ imageURL, setImageURL }) {
 

@@ -1,9 +1,7 @@
 import React from 'react'
-import '../styles/fileUpload.css'
+import './styles/fileUpload.css'
 
 function FileUpload({ setImageURL }) {
-
-
     const handleFileChange = (e) => {
         const file = e.target.files[0];
 
