@@ -3,7 +3,7 @@ import FileUpload from '../FileUpload'
 import FileOutput from '../FileOutput'
 import ImageProcessingOptions from '../ImageProcessingOptions'
 
-function ImaFX() {
+function Start() {
 
     const [imageURL, setImageURL] = useState('');
 
@@ -18,4 +18,4 @@ function ImaFX() {
     )
 }
 
-export default ImaFX
+export default Start
