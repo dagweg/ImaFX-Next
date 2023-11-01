@@ -1,9 +1,14 @@
 /** @type {import('tailwindcss').Config} */
+// tailwind.config.js
 module.exports = {
-  content: [],
+  // mode: 'jit',
   theme: {
-    extend: {},
+    // Your theme configuration
   },
-  plugins: [],
+  variants: {
+    // Your variants configuration
+  },
+  plugins: [
+    // Your plugins configuration
+  ],
 }
-

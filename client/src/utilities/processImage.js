@@ -1,4 +1,6 @@
-const processImage = async () => {
+
+
+const processImage = async (imageURL, setImageURL) => {
     try {
         const response = await fetch('http://localhost:5000/processImage/grayscale', {
             method: "POST",

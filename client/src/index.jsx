@@ -14,7 +14,7 @@ function Index() {
 
     return (
         <>
-            <header className='bg-gradient-to-r from-gray-500 to-gray-400 w-full text-white font-bold tracking-wide text-sm'>
+            <header className='bg-gray-500  backdrop-blur-sm w-full text-white font-bold tracking-wide text-sm fixed z-10'>
                 <div className="header-wrapper flex align-middle justify-around max-w-7xl h-full mx-auto py-3">
                     <div className='flex align-middle'>
                         {/* <img className='logo-image'></img> */}
@@ -31,7 +31,7 @@ function Index() {
                     </div>
                 </div>
             </header>
-            <section className='main-section flex flex-col justify-center h-screen'>
+            <section className='main-section flex flex-col justify-center h-screen bg-gradient-to-r from-[#aacaef] to-[#feccac]'>
                 <div className='flex justify-center gap-10 my-10'>
                     <FileUpload setImageURL={setImageURL} />
                     <ImageProcessingOptions imageURL={imageURL} setImageURL={setImageURL} />
@@ -42,10 +42,10 @@ function Index() {
                 <div className="footer-wrapper  max-w-7xl flex  mx-auto h-full justify-around">
                     <div>
                         <ul className='gap-2 flex flex-col  h-full justify-center px-4'>
-                            <li><a href='#' className='cursor-pointer'>Home</a></li>
-                            <li><a href='#' className='cursor-pointer'>Options</a></li>
-                            <li><a href='#' className='cursor-pointer'>Pricing</a></li>
-                            <li><a href='#' className='cursor-pointer'>Account</a></li>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Options</a></li>
+                            <li><a href="#">Pricing</a></li>
+                            <li><a href="#">Account</a></li>
                         </ul>
                     </div>
                     <div>

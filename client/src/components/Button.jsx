@@ -4,8 +4,8 @@ import processImage from '../utilities/processImage'
 
 function Button({ text, imageURL, setImageURL }) {
     return (
-        <>
-            <button onClick={processImage}>
+        <>  
+            <button onClick={() => processImage(imageURL, setImageURL)}>
                 {text}
             </button>
         </>
