@@ -1,0 +1,62 @@
+@import url('./variables.css');
+
+.pricing-choices {
+    @apply flex justify-center;
+}
+
+.pricing-choices .badge {
+    color: white;
+    @apply font-black text-xl bg-gray-400 text-center inline-block px-5 rounded-full my-2
+}
+
+.pricing-choices .price {
+    @apply font-black text-5xl pb-2
+}
+
+.pricing-choices .price span {
+    @apply text-base
+}
+
+.pricing-choices .description {
+    @apply py-4
+}
+
+.pricing-choices .tier-features {
+    @apply py-4
+}
+
+.check-mark {
+    @apply text-green-600 pr-2 font-bold
+}
+
+.pricing-choices .tier-features .feature {
+    @apply block
+}
+
+.card-price {
+    position: relative;
+    background-color: #fafafa;
+    color: var(--dark);
+    width: 25rem;
+    height: fit-content;
+    max-height: fit-content;
+    border-radius: 10px;
+    box-shadow: 4px 5px 15px 1px #2224;
+    margin: 1rem;
+    padding: 2rem 4rem;
+    box-sizing: border-box;
+    z-index: 10;
+    overflow: hidden;
+}
+
+.card-price::before {
+    content: '';
+    position: absolute;
+    background-color: var(--light);
+    color: var(--very-light);
+    width: 10%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
