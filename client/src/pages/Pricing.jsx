@@ -39,7 +39,7 @@ function Pricing() {
                     <h1 className='text-xl'>Choose the plan that suits your needs</h1>
                 </div>
                 <div className='pricing-choices'>
-                    <div className='card-price'>
+                    <div className='card-price starter'>
                         <h1 className='badge'>Starter</h1>
                         <h1 className='price'>Free</h1>
                         <p className='description'>Get started with our free plan and enjoy limited features.</p>
@@ -51,7 +51,7 @@ function Pricing() {
                             ))}
                         </p >
                     </div>
-                    <div className='card-price'>
+                    <div className='card-price pro'>
                         <h1 className='badge'>Pro</h1>
                         <h1 className='price'>$4.99<span>/mo</span></h1>
                         <p className='description'>Elevate your image processing with our Pro tier designed for Small teams.</p>
@@ -63,7 +63,7 @@ function Pricing() {
                             ))}
                         </p >
                     </div>
-                    <div className='card-price'>
+                    <div className='card-price enterprise'>
                         <h1 className='badge'>Enterprise</h1>
                         <h1 className='price'>$19.99<span>/mo</span></h1>
                         <p className='description'>For businesses and organizations with extensive image processing needs.</p>

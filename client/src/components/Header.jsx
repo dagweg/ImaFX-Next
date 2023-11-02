@@ -19,7 +19,7 @@ function Header() {
                 </div>
                 <dir className='vertical-flex'>
                     <ul>
-                        <li><a href='/Login' className='hover:underline transition-all duration-150'>Login</a></li>
+                        <li><a href='/Login' className='hover:underline transition-all duration-150'>Login / Signup</a></li>
                     </ul>
                 </dir>
             </div>
