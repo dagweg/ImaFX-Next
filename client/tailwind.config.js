@@ -5,9 +5,7 @@ module.exports = {
   theme: {
     // Your theme configuration
   },
-  variants: {
-    // Your variants configuration
-  },
+  variants: ["active", "hover"],
   plugins: [
     // Your plugins configuration
   ],

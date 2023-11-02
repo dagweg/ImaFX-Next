@@ -10,7 +10,7 @@ import Start from './pages/Start'
 import Home from './pages/Home'
 import Pricing from './pages/Pricing'
 import Account from './pages/Account'
-import Login from './pages/Login'
+import LoginSignup from './pages/LoginSignup'
 
 function Index() {
     return (
@@ -23,7 +23,7 @@ function Index() {
                         <Route path="/Start" element={<Start />} />
                         <Route path="/pricing" element={<Pricing />} />
                         <Route path="/account" element={<Account />} />
-                        <Route path="/login" element={<Login />} />
+                        <Route path="/login" element={<LoginSignup />} />
                     </Routes>
                 </div>
                 <Footer />
