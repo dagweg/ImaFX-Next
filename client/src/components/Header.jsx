@@ -1,14 +1,16 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import links from '../links'
 
-function Header({ className }) {
+function Header() {
+
+    const navigate = useNavigate()
+
     return (
-        <header className={`w-full font-bold tracking-wide text-sm  z-10 ${className}`}>
+        <header className='w-full font-bold tracking-wide text-sm  z-10'>
             <div className="header-wrapper flex align-middle justify-around max-w-7xl h-auto mx-auto py-3">
                 <div className='flex align-middle'>
-                    {/* <img className='logo-image' alt=''></img> */}
-                    <h1 className='cursor-pointer text-3xl font-black tracking-wider'>ImaFX</h1>
+                    <h1 className='cursor-pointer text-3xl font-black tracking-wider' onClick={() => navigate(links.root.home)}>ImaFX</h1>
                     <i className='fa-solid fa-trademark text-xs'></i>
                 </div>
                 <div className='vertical-flex'>
@@ -25,7 +27,7 @@ function Header({ className }) {
                     </ul>
                 </dir>
             </div>
-        </header>
+        </ header >
     )
 }
 

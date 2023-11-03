@@ -23,6 +23,7 @@ import Logout from './pages/Account/Logout'
 import DeleteAccount from './pages/Account/DeleteAccount'
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
 import AccountSettings from './pages/AccountSettings'
+import TermsAndPrivacyPolicy from './pages/Account/TermsAndPrivacyPolicy'
 
 
 const router = createBrowserRouter(
@@ -44,7 +45,7 @@ const router = createBrowserRouter(
                 <Route path={links.account.supportHelpCenter} element={<SupportCenter />} />
                 <Route path={links.account.logOut} element={<Logout />} />
                 <Route path={links.account.deleteAccount} element={<DeleteAccount />} />
-
+                <Route path={links.account.termsAndPrivacyPolicy} element={<TermsAndPrivacyPolicy />} />
             </Route>
             <Route path={links.root.login} element={<LoginSignup />}>
                 <Route path={links.root.login} />
