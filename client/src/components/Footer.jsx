@@ -2,8 +2,8 @@ import React from 'react'
 
 function Footer() {
     return (
-        <footer className='relative w-full bottom-0 align-bottom rounded-sm'>
-            <div className="max-w-7xl flex mx-auto justify-around">
+        <footer className='relative h-auto'>
+            <div className="max-w-7xl flex mx-auto justify-around m-auto">
                 <div>
                     <ul className=' flex gap-4 h-full align-middle p-4 text-sm'>
                         <li><a href="/">Home</a></li>

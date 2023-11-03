@@ -2,10 +2,10 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import links from '../links'
 
-function Header() {
+function Header({ className }) {
     return (
-        <header className='w-full font-bold tracking-wide text-sm fixed z-10'>
-            <div className="header-wrapper flex align-middle justify-around max-w-7xl h-full mx-auto py-3">
+        <header className={`w-full font-bold tracking-wide text-sm  z-10 ${className}`}>
+            <div className="header-wrapper flex align-middle justify-around max-w-7xl h-auto mx-auto py-3">
                 <div className='flex align-middle'>
                     {/* <img className='logo-image' alt=''></img> */}
                     <h1 className='cursor-pointer text-3xl font-black tracking-wider'>ImaFX</h1>

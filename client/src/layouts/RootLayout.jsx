@@ -6,11 +6,13 @@ import { Outlet } from 'react-router-dom'
 function RootLayout() {
     return (
         <>
-            <Header />
-            <div className='h-screen bg-gradient-to-r from-gray-50 to-gray-100 pt-16'>
-                <Outlet />
+            <div className='relative'>
+                <Header />
+                <main className='bg-gradient-to-r'>
+                    <Outlet />
+                </main>
+                <Footer />
             </div>
-            <Footer />
         </>
     )
 }

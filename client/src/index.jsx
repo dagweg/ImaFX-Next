@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom'
 import "./styles/globals.css"
 import "./styles/index.css"
 import "./styles/tailwind.css"
-import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
 import Start from './pages/Start'
 import Home from './pages/Home'
 import Pricing from './pages/Pricing'
@@ -14,9 +13,15 @@ import links from './links'
 import Dashboard from './pages/Account/Dashboard'
 import Profile from './pages/Account/Profile'
 import Security from './pages/Account/Security'
-import Login from './pages/Login'
-import SignUp from './pages/SignUp'
 import Privacy from './pages/Account/Privacy'
+import Preferences from './pages/Account/Preferences'
+import Notifications from './pages/Account/Notifications'
+import Payment from './pages/Account/Payment'
+import OrdersHistory from './pages/Account/OrdersHistory'
+import SupportCenter from './pages/Account/SupportCenter'
+import Logout from './pages/Account/Logout'
+import DeleteAccount from './pages/Account/DeleteAccount'
+import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
 
 
 const router = createBrowserRouter(
@@ -30,6 +35,13 @@ const router = createBrowserRouter(
                 <Route path={links.account.profile} element={<Profile />} />
                 <Route path={links.account.security} element={<Security />} />
                 <Route path={links.account.privacy} element={<Privacy />} />
+                <Route path={links.account.notifications} element={<Notifications />} />
+                <Route path={links.account.preferences} element={<Preferences />} />
+                <Route path={links.account.payment} element={<Payment />} />
+                <Route path={links.account.ordersHistory} element={<OrdersHistory />} />
+                <Route path={links.account.supportHelpCenter} element={<SupportCenter />} />
+                <Route path={links.account.logOut} element={<Logout />} />
+                <Route path={links.account.deleteAccount} element={<DeleteAccount />} />
 
             </Route>
             <Route path={links.root.login} element={<LoginSignup />}>
