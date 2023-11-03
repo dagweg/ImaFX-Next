@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import links from '../links'
 
 function Header() {
     return (
@@ -11,15 +13,15 @@ function Header() {
                 </div>
                 <div className='vertical-flex'>
                     <ul className='flex justify-around gap-10 '>
-                        <li><a href='/' >Home</a></li>
-                        <li><a href='/Start'>Start</a></li>
-                        <li><a href='/Pricing'>Pricing</a></li>
-                        <li><a href='/Account'>Account</a></li>
+                        <li><Link to={links.root.home} >Home</Link></li>
+                        <li><Link to={links.root.start}>Start</Link></li>
+                        <li><Link to={links.root.pricing}>Pricing</Link></li>
+                        <li><Link to={links.root.account}>Account</Link></li>
                     </ul>
                 </div>
                 <dir className='vertical-flex'>
                     <ul>
-                        <li><a href='/Login' className='hover:underline transition-all duration-150'>Login / Signup</a></li>
+                        <li><Link to={links.root.login} className='hover:underline transition-all duration-150'>Login / Signup</Link></li>
                     </ul>
                 </dir>
             </div>

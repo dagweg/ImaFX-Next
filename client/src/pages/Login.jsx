@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import links from '../links'
 import '../styles/login.css'
 
 function Login({ loadSignUpPanel }) {
@@ -26,7 +28,7 @@ function Login({ loadSignUpPanel }) {
                                 <button className='signup-button'>Login</button>
                             </div>
                             <div className='text-box-wrapper '>
-                                <p className='w-full'>Don't have an account? <button className='sign-up' onClick={loadSignUpPanel}>Sign Up</button></p>
+                                <p className='w-full'>Don't have an account? <Link to={'/' + links.root.signup}><button className='sign-up' onClick={loadSignUpPanel}>Sign Up</button></Link></p>
                             </div>
                         </div>
                     </div>

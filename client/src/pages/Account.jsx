@@ -1,22 +1,13 @@
 import React from 'react'
 import '../styles/account.css'
+import { Outlet, useNavigate } from 'react-router-dom';
+import links from '../links';
 
 function Account() {
 
-    const accountPageMenuItems = [
-        "Dashboard",
-        "Profile",
-        "Security",
-        "Privacy Settings",
-        "Notifications",
-        "Preferences",
-        "Payment",
-        "Orders/History",
-        "Support/Help Center",
-        "Log Out",
-        "Delete Account",
-        "Terms and Privacy Policy",
-    ];
+    const navigate = useNavigate()
+
+    const accountPageMenuItems = Object.keys(links.account).map(key => links.account[key])
 
     return (
         <>
@@ -24,12 +15,17 @@ function Account() {
                 <nav className='side-bar bg-gray-200 relative '>
                     <h1 className='title text-4xl font-black text-gray-1000 py-8 bg-gray-300 text-center'>Account Settings</h1>
                     <ul className='flex flex-col justify-center overflow-scroll h-full'>
-                        {accountPageMenuItems.map((menu, index) => (
-                            <li className='m-1 py-5 cursor-pointer hover:bg-gray-50 pl-40' key={index}><h1>{menu}</h1></li>
+
+                        {accountPageMenuItems.map((menuItem, index) => (
+                            <li className='m-1 py-5 cursor-pointer hover:bg-gray-50 pl-40' key={index} onClick={() => navigate(menuItem)}>
+                                <h1>{menuItem}</h1>
+                            </li>
                         ))}
+
                     </ul>
                 </nav>
                 <div className='main-bar bg-gray-300 relative'>
+                    <Outlet />
                 </div>
             </div>
         </>
