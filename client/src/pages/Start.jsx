@@ -8,8 +8,8 @@ function Start() {
     const [imageURL, setImageURL] = useState('');
 
     return (
-        <section className='main-section flex flex-col justify-center h-screen'>
-            <div className='flex justify-center gap-10 my-10'>
+        <section className='relative flex flex-col justify-center h-screen w-screen'>
+            <div className='absolute top-0 right-0 left-0 bottom-0 grid grid-cols-7 grid-rows-1 p-10'>
                 <FileUpload setImageURL={setImageURL} />
                 <ImageProcessingOptions imageURL={imageURL} setImageURL={setImageURL} />
                 <FileOutput imageURL={imageURL} setImageURL={setImageURL} />

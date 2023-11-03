@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import './styles/fileOutput.css';
 import { Ripples } from '@uiball/loaders'
 
 function FileOutput({ imageURL, setImageURL }) {
@@ -17,7 +16,7 @@ function FileOutput({ imageURL, setImageURL }) {
 
     return (
         <>
-            <div className='file-output-wrapper flex justify-center align-middle p-2 m-2 max-w-lg relative'>
+            <div className='image-panel-wrapper'>
                 {imageURL && <i className='fa-solid fa-close absolute top-0 right-0 -mt-4 -mr-4 scale-150 p-1 transition-all duration-150 rounded-full transform hover:bg-gray-100 cursor-pointer' onClick={() => setImageURL('')}></i>}
                 <img src={imageURL} alt='' className='max-w-full max-h-full' onLoad={imageLoaded} />
                 {loader.visible && (

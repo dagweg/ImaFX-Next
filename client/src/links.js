@@ -4,6 +4,7 @@ const links = {
         pricing: 'Pricing',
         start: 'Start',
         account: 'Account',
+        accountSettings: 'Account/*',
         login: 'Login',
         signup: 'Signup'
     },

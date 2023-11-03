@@ -1,13 +1,11 @@
-.file-upload-wrapper {
-  height: 35rem;
-  width: 30rem;
+.image-panel-wrapper {
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   box-shadow: 1px 2px 13px 4px rgba(0, 0, 0, 0.14);
-  -webkit-box-shadow: 1px 2px 13px 4px rgba(0, 0, 0, 0.14);
-  -moz-box-shadow: 1px 2px 13px 4px rgba(0, 0, 0, 0.14);
+  @apply col-span-3 bg-gray-100
 }
 
 .custum-file-upload {

@@ -22,6 +22,7 @@ import SupportCenter from './pages/Account/SupportCenter'
 import Logout from './pages/Account/Logout'
 import DeleteAccount from './pages/Account/DeleteAccount'
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
+import AccountSettings from './pages/AccountSettings'
 
 
 const router = createBrowserRouter(
@@ -30,7 +31,8 @@ const router = createBrowserRouter(
             <Route path={links.root.home} element={<Home />} />
             <Route path={links.root.start} element={<Start />} />
             <Route path={links.root.pricing} element={<Pricing />} />
-            <Route path={links.root.account} element={<Account />} >
+            <Route path={links.root.account} element={<Account />} />
+            <Route path={links.root.accountSettings} element={<AccountSettings />} >
                 <Route path={links.account.dashboard} element={<Dashboard />} />
                 <Route path={links.account.profile} element={<Profile />} />
                 <Route path={links.account.security} element={<Security />} />
