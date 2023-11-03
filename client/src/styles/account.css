@@ -1,0 +1,7 @@
+.side-bar {
+    width: 35%;
+}
+
+.main-bar {
+    flex-grow: 1;
+}
