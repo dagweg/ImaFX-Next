@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom'
 import "./styles/globals.css"
 import "./styles/index.css"
 import "./styles/tailwind.css"
-import Start from './pages/Start'
 import Home from './pages/Home'
 import Pricing from './pages/Pricing'
 import Account from './pages/Account'
@@ -24,13 +23,15 @@ import DeleteAccount from './pages/Account/DeleteAccount'
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
 import AccountSettings from './pages/AccountSettings'
 import TermsAndPrivacyPolicy from './pages/Account/TermsAndPrivacyPolicy'
+import Workspace from './pages/Workspace'
 
 
 const router = createBrowserRouter(
     createRoutesFromElements(
         <Route path='/' element={<RootLayout />}>
+            <Route path={links.root.index} element={<Home />} />
             <Route path={links.root.home} element={<Home />} />
-            <Route path={links.root.start} element={<Start />} />
+            <Route path={links.root.workspace} element={<Workspace />} />
             <Route path={links.root.pricing} element={<Pricing />} />
             <Route path={links.root.account} element={<Account />} />
             <Route path={links.root.accountSettings} element={<AccountSettings />} >

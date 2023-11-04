@@ -1,8 +1,9 @@
 const links = {
     root: {
+        index: '/',
         home: 'Home',
         pricing: 'Pricing',
-        start: 'Start',
+        workspace: 'Workspace',
         account: 'Account',
         accountSettings: 'Account/*',
         login: 'Login',

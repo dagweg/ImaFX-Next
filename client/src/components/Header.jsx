@@ -15,10 +15,10 @@ function Header() {
                 </div>
                 <div className='vertical-flex'>
                     <ul className='flex justify-around gap-10 '>
-                        <li><Link to={links.root.home} >Home</Link></li>
-                        <li><Link to={links.root.start}>Start</Link></li>
-                        <li><Link to={links.root.pricing}>Pricing</Link></li>
-                        <li><Link to={links.root.account}>Account</Link></li>
+                        <li><Link to={links.root.home} >{links.root.home}</Link></li>
+                        <li><Link to={links.root.workspace}>{links.root.workspace}</Link></li>
+                        <li><Link to={links.root.pricing}>{links.root.pricing}</Link></li>
+                        <li><Link to={links.root.account}>{links.root.account}</Link></li>
                     </ul>
                 </div>
                 <dir className='vertical-flex'>

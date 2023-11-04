@@ -1,0 +1,102 @@
+.modifier-pane {
+    width: 15%;
+    height: auto;
+    @apply bg-gray-300 relative
+}
+
+.modifier-pane h1 {
+    @apply my-4 text-center font-black text-xl
+}
+
+.modifier-pane button {
+    @apply w-full p-2
+}
+
+.canvas {
+    @apply bg-gray-100 flex-grow relative p-2
+}
+
+
+.canvas-tab {
+    border-radius: 1rem 1rem 0 0;
+    box-shadow: 0px -2px 5px #2221;
+    @apply h-8 w-32 bg-white relative flex justify-center items-center
+}
+
+.canvas-tab i {
+    position: absolute;
+    right: -33px;
+    animation: slideAnim 350ms ease-out;
+    @apply p-2 rounded-full cursor-pointer
+}
+
+.canvas-tab i:active {
+    scale: 0.95;
+}
+
+@keyframes slideAnim {
+    0% {
+        right: 0px;
+        z-index: -1;
+    }
+
+    100% {
+        right: -33px;
+    }
+}
+
+.canvas-tab i:hover {
+    @apply bg-gray-200
+}
+
+.canvas-main {
+    box-shadow: 0px 2px 5px #2221;
+    @apply w-full relative bg-white h-full flex flex-col justify-center items-center
+}
+
+.canvas-main .image-icon {
+    @apply text-6xl
+}
+
+.canvas-main .image-add {
+    @apply text-xl
+}
+
+.canvas-main .image {
+    @apply absolute max-h-full max-w-full bg-contain p-10
+}
+
+.add-image-wrapper {
+    filter: invert(0.3);
+    border-style: dashed;
+    border-width: 2px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 150ms ease-in-out;
+    @apply py-10 px-20 flex flex-col justify-center items-center
+}
+
+.add-image-wrapper:hover {
+    scale: 1.02;
+}
+
+.add-image-wrapper:active {
+    scale: 1;
+}
+
+.add-image-wrapper .icon {
+    width: 7rem;
+    margin: 0 auto;
+}
+
+.add-image-wrapper .text {
+    @apply text-xl
+}
+
+.dropdown-menu {
+    @apply w-full bg-gray-200 hover:bg-gray-50 h-10 cursor-pointer flex justify-between items-center px-4
+}
+
+.dropdown-menu-items {
+    @apply w-full bg-gray-300 hover:bg-gray-50 h-10 cursor-pointer flex justify-between items-center px-4
+}
