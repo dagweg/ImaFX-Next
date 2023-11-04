@@ -94,9 +94,22 @@
 }
 
 .dropdown-menu {
-    @apply w-full bg-gray-200 hover:bg-gray-50 h-10 cursor-pointer flex justify-between items-center px-4
+    @apply w-full bg-gray-200 hover:bg-gray-50 h-10 cursor-pointer flex justify-between items-center px-4 rounded-md
 }
 
-.dropdown-menu-items {
-    @apply w-full bg-gray-300 hover:bg-gray-50 h-10 cursor-pointer flex justify-between items-center px-4
+.dropdown-menu:active {
+    @apply bg-white
+}
+
+.dropdown-menu-buttons-container {
+    @apply ml-3
+}
+
+.dropdown-menu-button {
+    @apply w-full bg-gray-300 hover:bg-gray-50 h-10 cursor-pointer flex justify-between items-center px-4 rounded-md
+}
+
+
+.dropdown-menu-button:active {
+    scale: 0.96;
 }

@@ -1,11 +1,23 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import '../styles/workspace.css'
 import imageProcessingEffects from '../utilities/effects';
 
 function Workspace() {
 
     const [imageURL, setImageURL] = useState('');
+    const [dropDownMenu, setDropDownMenu] = useState([])
     const fileInput = useRef()
+    const dropDownBtnContainer = useRef()
+
+    useEffect(() => {
+        const effects = imageProcessingEffects.map((obj, i) => ({
+            ...obj,
+            hidden: true,
+            id: i
+        }))
+        setDropDownMenu(effects)
+        console.log(dropDownMenu)
+    }, [])
 
     const handleFileChange = (e) => {
         const file = e.target.files[0]
@@ -18,27 +30,42 @@ function Workspace() {
         fileInput.current.click()
     }
 
+    const dropDownMenuClick = (index) => {
+        const updated = dropDownMenu.map((obj, i) => {
+            if (i === index) {
+                return ({
+                    ...obj,
+                    hidden: obj.hidden ? false : true
+                })
+            }
+            return obj
+        })
+        setDropDownMenu(prev => updated)
+    }
+
     return (
         <section className='relative flex flex-col justify-center h-screen'>
             <div className='absolute top-0 right-0 left-0 bottom-0 flex '>
                 <section className='modifier-pane overflow-y-scroll'>
                     <h1>Modifiers</h1>
                     <div className='relative'>
-                        {imageProcessingEffects.map((obj, i) => (
-
+                        {dropDownMenu.map((obj, i) => (
                             <div>
-                                <div key={i} className='dropdown-menu'>
-                                    <label htmlFor="" key={i}>{obj.category}</label>
-                                    <i className='fa-solid fa-angle-down' key={i}></i>
+                                <div key={i} className='dropdown-menu' onClick={() => dropDownMenuClick(i)}>
+                                    <label htmlFor="">{obj.category}</label>
+                                    <i className={`fa-solid ${!obj.hidden ? 'fa-angle-up' : 'fa-angle-down'}`}></i>
                                 </div>
-                                <div className='ml-3'>
-                                    {obj.effects.map((effect, j) => (
-                                        <div key={j} className='dropdown-menu-items'>
-                                            <label htmlFor="" key={j}>{effect}</label>
-                                            <i className='fa-solid ' key={j}></i>
-                                        </div>
-                                    ))}
-                                </div>
+                                {
+                                    !obj.hidden &&
+                                    <div className={`dropdown-menu-buttons-container`} key={i} ref={dropDownBtnContainer}>
+                                        {obj.effects.map((effect, j) => (
+                                            <div key={j} className='dropdown-menu-button'>
+                                                <label htmlFor="">{effect}</label>
+                                                <i className='fa-solid '></i>
+                                            </div>
+                                        ))}
+                                    </div>
+                                }
                             </div>
                         ))}
                     </div>
