@@ -77,9 +77,7 @@ function Workspace() {
                     </div>
                     <div className='canvas-main'>
                         {
-                            imageURL !== '' ?
-                                <img src={`${imageURL}`} alt='' className='image'></img>
-                                :
+                            imageURL !== '' ? <img src={`${imageURL}`} alt='' className='image'></img> :
                                 <div className='add-image-wrapper' onClick={addImageClicked}>
                                     <input type="file" ref={fileInput} onChange={handleFileChange} hidden />
                                     <div className="icon">
@@ -89,6 +87,7 @@ function Workspace() {
                                         <span>Click to upload image</span>
                                     </div>
                                 </div>
+
                         }
 
 

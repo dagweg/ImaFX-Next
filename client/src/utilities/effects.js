@@ -13,7 +13,8 @@ const imageProcessingEffects = [
             'Blur',
             'Sharpen',
             'Noise Reduction'
-        ]
+        ],
+        tier: 'Free'
     },
     {
         category: "Color Adjustments",
@@ -24,7 +25,8 @@ const imageProcessingEffects = [
             'Color Balance',
             'Colorize',
             'Color Splash'
-        ]
+        ],
+        tier: 'Free'
     },
     {
         category: "Cropping and Resizing",
@@ -33,14 +35,16 @@ const imageProcessingEffects = [
             'Resize',
             'Rotate',
             'Flip'
-        ]
+        ],
+        tier: 'Free'
     },
     {
         category: "Text and Watermarking",
         effects: [
             'Add Text to Images',
             'Watermarking',
-        ]
+        ],
+        tier: 'Pro'
     },
     {
         category: "Image Retouching",
@@ -49,7 +53,8 @@ const imageProcessingEffects = [
             'Blemish Removal',
             'Wrinkle Reduction',
             'Teeth Whitening'
-        ]
+        ],
+        tier: 'Pro'
     },
     {
         category: "Image Enhancement",
@@ -58,7 +63,8 @@ const imageProcessingEffects = [
             'Sharpen',
             'Denoise',
             'Auto-correct'
-        ]
+        ],
+        tier: 'Pro'
     },
     {
         category: "Artistic Effects",
@@ -68,14 +74,16 @@ const imageProcessingEffects = [
             'Cubism',
             'Mosaic',
             'Pixelation'
-        ]
+        ],
+        tier: 'Pro'
     },
     {
         category: "Collage and Montage",
         effects: [
             'Create Image Collages',
             'Combine Multiple Images'
-        ]
+        ],
+        tier: 'Pro'
     },
     {
         category: "Geometric Transforms",
@@ -83,32 +91,37 @@ const imageProcessingEffects = [
             'Distortions',
             'Perspective Correction',
             'Tilt-shift'
-        ]
+        ],
+        tier: 'Pro'
     },
     {
         category: "Background Removal",
         effects: [
             'Remove background'
-        ]
+        ],
+        tier: 'Pro'
     },
     {
         category: "Frames and Borders",
         effects: [
             'Add Decorative Frames',
             'Add Borders'
-        ]
+        ],
+        tier: 'Pro'
     },
     {
         category: "Image Compression",
         effects: [
             'Compress & save'
-        ]
+        ],
+        tier: 'Free'
     },
     {
         category: "3D Effects",
         effects: [
             'Create Anaglyph'
-        ]
+        ],
+        tier: 'Pro'
     }
 ];
 

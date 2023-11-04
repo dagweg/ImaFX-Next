@@ -29,8 +29,6 @@ function Pricing() {
         "White-labeling and branding",
     ];
 
-    // You can then access and display these options as needed in your platform.
-
     return (
         <>
             <div>
@@ -40,7 +38,7 @@ function Pricing() {
                 </div>
                 <div className='pricing-choices'>
                     <div className='card-price starter'>
-                        <h1 className='badge'>Starter</h1>
+                        <h1 className='badge bg-gray-500'>Starter</h1>
                         <h1 className='price'>Free</h1>
                         <p className='description'>Get started with our free plan and enjoy limited features.</p>
                         <p className='tier-features'>
@@ -52,7 +50,7 @@ function Pricing() {
                         </p >
                     </div>
                     <div className='card-price pro'>
-                        <h1 className='badge'>Pro</h1>
+                        <h1 className='badge bg-blue-500'>Pro</h1>
                         <h1 className='price'>$4.99<span>/mo</span></h1>
                         <p className='description'>Elevate your image processing with our Pro tier designed for Small teams.</p>
                         <p className='tier-features'>
@@ -64,7 +62,7 @@ function Pricing() {
                         </p >
                     </div>
                     <div className='card-price enterprise'>
-                        <h1 className='badge'>Enterprise</h1>
+                        <h1 className='badge bg-purple-500'>Enterprise</h1>
                         <h1 className='price'>$19.99<span>/mo</span></h1>
                         <p className='description'>For businesses and organizations with extensive image processing needs.</p>
                         <p className='tier-features'>
