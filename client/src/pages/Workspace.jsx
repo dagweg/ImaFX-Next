@@ -44,7 +44,7 @@ function Workspace() {
     }
 
     return (
-        <section className='relative flex flex-col justify-center h-screen'>
+        <section className='relative flex flex-col justify-center h-screen' style={{ fontSize: 15 }}>
             <div className='absolute top-0 right-0 left-0 bottom-0 flex '>
                 <section className='modifier-pane overflow-y-scroll'>
                     <h1>Modifiers</h1>
@@ -59,7 +59,7 @@ function Workspace() {
                                     !obj.hidden &&
                                     <div className={`dropdown-menu-buttons-container`} key={i} ref={dropDownBtnContainer}>
                                         {obj.effects.map((effect, j) => (
-                                            <div key={j} className='dropdown-menu-button'>
+                                            <div key={j} className='dropdown-menu-button' onClick={() => console.log(effect, j)}>
                                                 <label htmlFor="">{effect}</label>
                                                 <i className='fa-solid '></i>
                                             </div>
