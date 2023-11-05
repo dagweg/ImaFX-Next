@@ -72,7 +72,18 @@
 }
 
 .canvas-main .image {
+    animation: animateImageLoad 350ms ease-in-out;
     @apply absolute max-h-full max-w-full bg-contain p-10
+}
+
+@keyframes animateImageLoad {
+    0% {
+        scale: 0;
+    }
+
+    100% {
+        scale: 1;
+    }
 }
 
 .add-image-wrapper {
@@ -108,11 +119,16 @@
     @apply w-full h-10 cursor-pointer flex justify-between items-center px-4 rounded-md
 }
 
+.dropdown-menu * {
+    cursor: pointer;
+}
+
 .dropdown-menu:active {
     @apply bg-white
 }
 
 .dropdown-menu-buttons-container {
+    cursor: pointer;
     @apply ml-3 bg-gray-300 bg-opacity-25
 }
 

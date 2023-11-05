@@ -1,11 +1,15 @@
 import React, { useState, useRef, useEffect } from 'react'
-import '../styles/workspace.css'
 import imageProcessingEffects from '../utilities/effects';
+import { grayscale } from '../utilities/modifiers';
+import '../styles/workspace.css'
+import { grid } from 'ldrs'
+
 
 function Workspace() {
 
     const [imageURL, setImageURL] = useState('');
     const [dropDownMenu, setDropDownMenu] = useState([])
+    const [isLoading, setIsLoading] = useState(false)
     const fileInput = useRef()
     const dropDownBtnContainer = useRef()
 
@@ -17,7 +21,14 @@ function Workspace() {
         }))
         setDropDownMenu(effects)
         console.log(dropDownMenu)
+
+        grid.register() // registering the loader 
     }, [])
+
+    useEffect(() => {
+        setIsLoading(prev => true)
+        setTimeout(() => setIsLoading(prev => false), 2000)
+    }, [imageURL])
 
     const handleFileChange = (e) => {
         const file = e.target.files[0]
@@ -43,21 +54,6 @@ function Workspace() {
         setDropDownMenu(prev => updated)
     }
 
-    const grayscale = (url) => {
-
-        fetch('http://localhost:5000/modifier/grayscale', {
-            method: "POST",
-            body: {
-                url: imageURL
-            }
-        })
-            .then((response) => response.json())
-            .then((data) => {
-                console.log(data)
-                // setImageURL(data.url)
-            })
-            .catch((error) => { console.log(error) })
-    }
 
     return (
         <section className='relative flex flex-col justify-center h-screen' style={{ fontSize: 15 }}>
@@ -65,10 +61,6 @@ function Workspace() {
                 <section className='modifier-pane overflow-y-scroll'>
                     <h1>Modifiers</h1>
                     <div className='relative'>
-                        {/* <div className='dropdown-menu-button' onClick={() => grayscale(imageURL)} key={1}>
-                            <label htmlFor="">Grayscale</label>
-                            <i className='fa-solid '></i>
-                        </div> */}
                         {dropDownMenu.map((obj, i) => (
                             <div>
                                 <div key={i} className='dropdown-menu' onClick={() => dropDownMenuClick(i)}>
@@ -100,7 +92,20 @@ function Workspace() {
                     </div>
                     <div className='canvas-main'>
                         {
-                            imageURL !== '' ? <img src={`${imageURL}`} alt='' className='image'></img> :
+                            imageURL !== '' ? (
+                                isLoading ?
+                                    <>
+                                        <l-grid size={"120"} speed={"1.5"} color={"black"}></l-grid>
+                                        <br></br>
+                                        <p>Loading file...</p>
+                                    </>
+                                    :
+                                    <>
+                                        <img src={`${imageURL}`} alt='' className='image'></img>
+
+                                    </>
+                            )
+                                :
                                 <div className='add-image-wrapper' onClick={addImageClicked}>
                                     <input type="file" ref={fileInput} onChange={handleFileChange} hidden />
                                     <div className="icon">
@@ -110,10 +115,7 @@ function Workspace() {
                                         <span>Click to upload image</span>
                                     </div>
                                 </div>
-
                         }
-
-
                     </div>
                 </section>
             </div >
