@@ -1,4 +1,4 @@
-button {
+/* button {
     position: relative;
     padding: 2rem 20px;
     font-size: 14px;
@@ -15,7 +15,6 @@ button:hover {
     border-radius: 7px;
     background: #ebebeb;
     border: none;
-    /* box-shadow: 0 0 20px 2px rgba(0, 142, 236, 0.815); */
     -webkit-transition: all 0.2s ease-out;
     -moz-transition: all 0.2s ease-out;
     transition: all 0.2s ease-out;
@@ -67,4 +66,4 @@ button:active {
     -webkit-transition: box-shadow 0.2s ease-in;
     -moz-transition: box-shadow 0.2s ease-in;
     transition: box-shadow 0.2s ease-in;
-}
+} */

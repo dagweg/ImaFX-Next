@@ -7,7 +7,8 @@ const links = {
         account: 'Account',
         accountSettings: 'Account/*',
         login: 'Login',
-        signup: 'Signup'
+        signup: 'Signup',
+        contact: 'Contact'
     },
     account: {
         dashboard: 'Dashboard',

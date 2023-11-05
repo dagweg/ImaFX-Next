@@ -17,14 +17,16 @@ function AccountSettings() {
                     <ul className='flex flex-col justify-center overflow-y-scroll h-full'>
 
                         {accountPageMenuItems.map((menuItem, index) => (
-                            <li className='m-1 py-5 cursor-pointer hover:bg-gray-50 pl-40' key={index} onClick={() => navigate(menuItem)}>
+                            <li className='menu-item' key={index} onClick={() => navigate(menuItem)}>
                                 <h1>{menuItem}</h1>
                             </li>
                         ))}
                     </ul>
                 </nav>
-                <div className='main-bar bg-gray-100 relative rounded-lg p-20'>
-                    <Outlet />
+                <div className='main-bar-wrapper'>
+                    <div className='main-bar'>
+                        <Outlet />
+                    </div>
                 </div>
             </div>
         </>

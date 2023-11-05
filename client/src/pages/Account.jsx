@@ -11,13 +11,13 @@ function Account() {
 
     return (
         <>
-            <div className='flex justify-center relative '> {/**className='flex w-full h-full relative' */}
-                <nav className='side-bar relative h-full'>
-                    <h1 className='title text-4xl font-black text-gray-1000 py-8 text-center'>Account Settings</h1>
+            <div className='flex justify-center relative mx-auto shadow-lg m-3 rounded-lg' style={{ width: '50vw' }}> {/**className='flex w-full h-full relative' */}
+                <nav className='relative h-full w-full'>
+                    <h1 className='title text-4xl font-black  py-8 text-center'>Account Settings</h1>
                     <ul className='flex flex-col justify-center h-full'>
 
                         {accountPageMenuItems.map((menuItem, index) => (
-                            <li className='m-1 py-5 cursor-pointer hover:bg-gray-50 pl-40' key={index} onClick={() => navigate(menuItem)}>
+                            <li style={{ width: '75%' }} className='m-1 mx-auto py-5 cursor-pointer transition-all duration-75 hover:bg-gray-50 hover:bg-opacity-50 rounded-md text-left p-2' key={index} onClick={() => navigate(menuItem)}>
                                 <h1>{menuItem}</h1>
                             </li>
                         ))}

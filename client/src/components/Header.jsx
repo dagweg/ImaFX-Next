@@ -21,6 +21,7 @@ function Header() {
                         <li><Link to={links.root.workspace}>{links.root.workspace}</Link></li>
                         <li><Link to={links.root.pricing}>{links.root.pricing}</Link></li>
                         <li><Link to={links.root.account}>{links.root.account}</Link></li>
+                        <li><Link to={links.root.contact}>{links.root.contact}</Link></li>
                     </ul>
                 </div>
                 <dir className='vertical-flex'>

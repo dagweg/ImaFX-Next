@@ -23,8 +23,7 @@ import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } 
 import AccountSettings from './pages/AccountSettings'
 import TermsAndPrivacyPolicy from './pages/Account/TermsAndPrivacyPolicy'
 import Workspace from './pages/Workspace'
-import Login from './pages/Login'
-import SignUp from './pages/SignUp'
+import Contact from './pages/Contact'
 
 
 const router = createBrowserRouter(
@@ -49,7 +48,8 @@ const router = createBrowserRouter(
                 <Route path={links.account.deleteAccount} element={<DeleteAccount />} />
                 <Route path={links.account.termsAndPrivacyPolicy} element={<TermsAndPrivacyPolicy />} />
             </Route>
-            <Route path={links.root.login} element={<Login />} />
+            <Route path={links.root.contact} element={<Contact />} />
+            {/* <Route path={links.root.login} element={<Login />} /> */}
             {/* <Route path={links.root.signup} element={<SignUp />} /> */}
         </Route>
     )
