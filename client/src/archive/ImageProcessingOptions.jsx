@@ -1,6 +1,6 @@
 import React from 'react'
-import Button from './components/Button'
-import effects from './utilities/effects'
+import Button from '../components/Button'
+import effects from '../utilities/effects'
 
 function ImageProcessingOptions({ imageURL, setImageURL }) {
     return (

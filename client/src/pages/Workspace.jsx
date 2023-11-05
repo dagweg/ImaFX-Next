@@ -43,21 +43,43 @@ function Workspace() {
         setDropDownMenu(prev => updated)
     }
 
+    const grayscale = (url) => {
+
+        fetch('http://localhost:5000/modifier/grayscale', {
+            method: "POST",
+            body: {
+                url: imageURL
+            }
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data)
+                // setImageURL(data.url)
+            })
+            .catch((error) => { console.log(error) })
+    }
+
     return (
         <section className='relative flex flex-col justify-center h-screen' style={{ fontSize: 15 }}>
             <div className='absolute top-0 right-0 left-0 bottom-0 flex '>
                 <section className='modifier-pane overflow-y-scroll'>
                     <h1>Modifiers</h1>
                     <div className='relative'>
+                        {/* <div className='dropdown-menu-button' onClick={() => grayscale(imageURL)} key={1}>
+                            <label htmlFor="">Grayscale</label>
+                            <i className='fa-solid '></i>
+                        </div> */}
                         {dropDownMenu.map((obj, i) => (
                             <div>
                                 <div key={i} className='dropdown-menu' onClick={() => dropDownMenuClick(i)}>
                                     <label htmlFor="">{obj.category}</label>
                                     <i className={`fa-solid ${!obj.hidden ? 'fa-angle-up' : 'fa-angle-down'}`}></i>
                                 </div>
+
                                 {
                                     !obj.hidden &&
                                     <div className={`dropdown-menu-buttons-container`} key={i} ref={dropDownBtnContainer}>
+
                                         {obj.effects.map((effect, j) => (
                                             <div key={j} className='dropdown-menu-button' onClick={() => console.log(effect, j)}>
                                                 <label htmlFor="">{effect}</label>
@@ -66,6 +88,7 @@ function Workspace() {
                                         ))}
                                     </div>
                                 }
+
                             </div>
                         ))}
                     </div>

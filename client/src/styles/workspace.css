@@ -1,7 +1,7 @@
 .modifier-pane {
     width: 15%;
     height: auto;
-    @apply bg-gray-300 relative
+    @apply relative overflow-x-hidden
 }
 
 .modifier-pane h1 {
@@ -13,14 +13,22 @@
 }
 
 .canvas {
-    @apply bg-gray-100 flex-grow relative p-2
+    @apply flex flex-col flex-grow relative p-2
 }
 
+.canvas-tab {
+    background-color: #fff3;
+}
+
+.canvas-main {
+    background-color: #fff3;
+    backdrop-filter: blur(10px);
+}
 
 .canvas-tab {
     border-radius: 1rem 1rem 0 0;
     box-shadow: 0px -2px 5px #2221;
-    @apply h-8 w-32 bg-white relative flex justify-center items-center
+    @apply h-8 w-32 relative flex justify-center items-center
 }
 
 .canvas-tab i {
@@ -28,10 +36,6 @@
     right: -33px;
     animation: slideAnim 350ms ease-out;
     @apply p-2 rounded-full cursor-pointer
-}
-
-.canvas-tab i:active {
-    scale: 0.95;
 }
 
 @keyframes slideAnim {
@@ -45,13 +49,18 @@
     }
 }
 
+
+.canvas-tab i:active {
+    scale: 0.95;
+}
+
 .canvas-tab i:hover {
     @apply bg-gray-200
 }
 
 .canvas-main {
-    box-shadow: 0px 2px 5px #2221;
-    @apply w-full relative bg-white h-full flex flex-col justify-center items-center
+    /* box-shadow: 0px 2px 5px #2221; */
+    @apply w-full relative h-full flex flex-col justify-center items-center
 }
 
 .canvas-main .image-icon {
@@ -94,7 +103,9 @@
 }
 
 .dropdown-menu {
-    @apply w-full bg-gray-200 hover:bg-gray-50 h-10 cursor-pointer flex justify-between items-center px-4 rounded-md
+    background-color: #fff3;
+    margin: 1px;
+    @apply w-full h-10 cursor-pointer flex justify-between items-center px-4 rounded-md
 }
 
 .dropdown-menu:active {
@@ -102,11 +113,17 @@
 }
 
 .dropdown-menu-buttons-container {
-    @apply ml-3
+    @apply ml-3 bg-gray-300 bg-opacity-25
 }
 
 .dropdown-menu-button {
-    @apply w-full bg-gray-300 hover:bg-gray-50 h-10 cursor-pointer flex justify-between items-center px-4 rounded-md
+    margin: 1px 0 0 0;
+    @apply w-full h-10 cursor-pointer flex justify-between items-center px-4 rounded-md bg-gray-300 bg-opacity-30
+}
+
+.dropdown-menu:hover,
+.dropdown-menu-button:hover {
+    background-color: #fff7;
 }
 
 

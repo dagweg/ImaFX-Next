@@ -1,5 +1,8 @@
 .side-bar {
     width: 35%;
+    background-color: transparent;
+    border: solid;
+    border-width: 0 1px;
 }
 
 .main-bar {

@@ -1,5 +1,5 @@
 import React from 'react'
-
+// css in globals.css
 function Footer() {
     return (
         <footer className='relative h-auto'>

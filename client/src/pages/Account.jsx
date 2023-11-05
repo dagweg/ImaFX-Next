@@ -12,8 +12,8 @@ function Account() {
     return (
         <>
             <div className='flex justify-center relative '> {/**className='flex w-full h-full relative' */}
-                <nav className='side-bar bg-gray-200 relative h-full'>
-                    <h1 className='title text-4xl font-black text-gray-1000 py-8 bg-gray-300 text-center'>Account Settings</h1>
+                <nav className='side-bar relative h-full'>
+                    <h1 className='title text-4xl font-black text-gray-1000 py-8 text-center'>Account Settings</h1>
                     <ul className='flex flex-col justify-center h-full'>
 
                         {accountPageMenuItems.map((menuItem, index) => (

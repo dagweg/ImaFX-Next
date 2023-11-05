@@ -35,7 +35,12 @@
 
 .card-price {
     position: relative;
-    background-color: #fafafa;
+    /* background-color: #fafafa; */
+    background: linear-gradient(to right, #8e9eab, #eef2f3);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: 300%;
+    background-position: right;
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     color: var(--dark);
     width: 25rem;
     height: fit-content;
@@ -54,7 +59,9 @@
 .card-price::before {
     content: '';
     position: absolute;
-    background-color: var(--light);
+    background: linear-gradient(to right, #8e9eab, #eef2f3);
+    background-size: 400%;
+    background-position: right;
     color: var(--very-light);
     width: 10%;
     height: 100%;

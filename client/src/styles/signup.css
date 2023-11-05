@@ -13,8 +13,6 @@
     border: solid;
     border-color: var(--dark) transparent var(--dark) transparent;
     border-width: 1rem 0 1rem 0;
-    /* filter: blur(5px); */
-    /* animation: change-colors 10s ease-in-out infinite; */
     @apply top-0 left-0 rounded-lg
 }
 
@@ -45,13 +43,13 @@
 .panel-internal {
     /* height: 55rem; */
     width: 100%;
-    animation: rotatePanel 1s ease-in-out;
     position: relative;
     z-index: 100;
     padding-left: 4rem;
-    overflow: hidden;
+    /* overflow: hidden; */
     scale: 1;
     transform-origin: right center;
+    animation: animatePanel 0.5s ease-in-out;
     @apply bg-gray-200 mx-auto rounded-md shadow-lg z-10
 }
 
@@ -66,18 +64,16 @@
     @apply relative h-full w-full bg-gray-100
 }
 
-@keyframes rotatePanel {
+@keyframes animatePanel {
     0% {
-        /* transform: scaleX(0); */
-        transform: rotateY(0deg);
-    }
-
-    50% {
-        transform: scaleX(0);
+        /* transform: scaleX(1);
+        transform: rotateY(0deg); */
+        opacity: 0;
     }
 
     100% {
-        transform: scaleX(1);
+        opacity: 1;
+        /* transform: scaleX(1); */
         /* transform: rotateY(180deg); */
     }
 }
@@ -145,4 +141,22 @@
 .text-box-wrapper .login:active {
     position: relative;
     @apply bg-gray-400 text-white
+}
+
+
+.input-validator-details {
+    min-height: 5rem;
+    @apply bg-blue-100 w-60 h-auto absolute -right-80 rounded-md shadow-md text-gray-900 p-2 z-10 flex flex-col justify-center
+}
+
+.input-validator-details::before {
+    content: '';
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    left: -0.6rem;
+    top: 1.5rem;
+    transform: rotate(45deg);
+    background-color: inherit;
+    z-index: -1;
 }

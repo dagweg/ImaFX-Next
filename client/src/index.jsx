@@ -1,12 +1,11 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { render } from 'react-dom'
 import "./styles/globals.css"
 import "./styles/index.css"
 import "./styles/tailwind.css"
 import Home from './pages/Home'
 import Pricing from './pages/Pricing'
 import Account from './pages/Account'
-import LoginSignup from './pages/LoginSignup'
 import RootLayout from './layouts/RootLayout'
 import links from './links'
 import Dashboard from './pages/Account/Dashboard'
@@ -24,6 +23,8 @@ import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } 
 import AccountSettings from './pages/AccountSettings'
 import TermsAndPrivacyPolicy from './pages/Account/TermsAndPrivacyPolicy'
 import Workspace from './pages/Workspace'
+import Login from './pages/Login'
+import SignUp from './pages/SignUp'
 
 
 const router = createBrowserRouter(
@@ -48,11 +49,8 @@ const router = createBrowserRouter(
                 <Route path={links.account.deleteAccount} element={<DeleteAccount />} />
                 <Route path={links.account.termsAndPrivacyPolicy} element={<TermsAndPrivacyPolicy />} />
             </Route>
-            <Route path={links.root.login} element={<LoginSignup />}>
-                <Route path={links.root.login} />
-                <Route path={links.root.signup} />
-            </Route>
-
+            <Route path={links.root.login} element={<Login />} />
+            {/* <Route path={links.root.signup} element={<SignUp />} /> */}
         </Route>
     )
 )
@@ -63,5 +61,5 @@ function Index() {
     )
 }
 
-
-ReactDOM.render(<Index />, document.getElementById('root'))
+const container = document.getElementById('root')
+render(<Index />, container)
