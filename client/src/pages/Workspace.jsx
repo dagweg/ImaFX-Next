@@ -56,18 +56,50 @@ function Workspace() {
 }
 export default Workspace
 
-const handleEffectClick = (effect, imageURL, setImageURL) => {
-    const requestURL = `http://localhost:5000/${effect}?imageURL=${encodeURIComponent(imageURL)}`;
+const getBlob = async (imageURL) => {
+    fetch(imageURL)
+        .then(response => response.blob())
+        .then(blob => blob)
+        .catch(error => console.log(error))
+}
 
-    fetch(requestURL, {
-        method: "GET"
-    })
-        .then((response) => response.json())
-        .then((data) => {
-            console.log("Received", data, "from server")
-            // setImageURL(data.URL)
+
+const handleEffectClick = async (effect, imageURL, setImageURL) => {
+
+
+    const blob = await getBlob(imageURL)
+    const reader = new FileReader()
+
+    reader.onLoad = function () {
+
+        const imageBuffer = reader.result
+
+        function arrayBufferToBase64(buffer) {
+            const binaryArray = new Uint8Array(buffer);
+            let binaryString = '';
+            for (let i = 0; i < binaryArray.length; i++) {
+                binaryString += String.fromCharCode(binaryArray[i]);
+            }
+            return btoa(binaryString);
+        }
+
+        console.log(effect)
+        const requestURL = `http://localhost:5000/modify/${effect}?imageBuffer=${encodeURIComponent(arrayBufferToBase64(imageBuffer))}`;
+
+        fetch(requestURL, {
+            method: "GET"
         })
-        .catch((error) => console.error("Error with effect:", effect, error));
+            .then((response) => response.json())
+            .then((data) => {
+                console.log("Received", data, "from server")
+                // setImageURL(data.URL)
+            })
+            .catch((error) => console.error("Error with effect:", effect, error));
+    }
+
+    reader.readAsArrayBuffer(blob)
+
+
 }
 
 

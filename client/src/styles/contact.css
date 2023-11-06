@@ -1,3 +1,16 @@
+.description *:not([type='social-media-links']) {
+    font-family: Poppins;
+    @apply text-gray-800
+}
+
+span.heading {
+    text-transform: uppercase;
+    display: block;
+    margin: 0;
+    font-weight: 900;
+    @apply text-gray-800 my-10
+}
+
 input[type='email'] {
     outline: none;
     border: none;
@@ -25,4 +38,8 @@ button[type='subscribe']:hover {
 
 button[type='subscribe']:active {
     scale: 0.94;
+}
+
+.contact-us-card {
+    @apply my-32 bg-gray-200
 }
