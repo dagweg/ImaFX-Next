@@ -1,153 +1,165 @@
-const sharp = require('sharp')
+import sharp from "../../node_modules/sharp/lib/index";
 
-// Function to create a grayscale image
-function applyGrayscaleEffect(imageURL) {
-    console.log('hooray')
+
+async function blobToBuffer(blob: Blob) {
+    return Buffer.from(await blob.arrayBuffer());
+}
+
+async function applyGrayscaleEffect(blob: Blob) {
+    try {
+        const imageBuffer = await blobToBuffer(blob);
+        const grayscaleImage = await sharp(imageBuffer).grayscale(true).toBuffer();
+        return grayscaleImage;
+    } catch (error) {
+        console.error("Error applying grayscale effect:", error);
+        throw error;
+    }
 }
 
 // Function to create a sepia image
-function applySepiaEffect(imageURL) {
+async function applySepiaEffect(blob: Blob) {
     // Implement the Sepia effect and return the new URL
 }
 
 // Function to create a vintage image
-function applyVintageEffect(imageURL) {
+async function applyVintageEffect(blob: Blob) {
     // Implement the Vintage effect and return the new URL
 }
 
 // Function to create a black and white image
-function applyBlackAndWhiteEffect(imageURL) {
+async function applyBlackAndWhiteEffect(blob: Blob) {
     // Implement the Black and White effect and return the new URL
 }
 
 // Function to create a cartoonized image
-function applyCartoonizeEffect(imageURL) {
+async function applyCartoonizeEffect(blob: Blob) {
     // Implement the Cartoonize effect and return the new URL
 }
 
 // Function to create an oil painting image
-function applyOilPaintingEffect(imageURL) {
+async function applyOilPaintingEffect(blob: Blob) {
     // Implement the Oil Painting effect and return the new URL
 }
 
 // Function to create a watercolor image
-function applyWatercolorEffect(imageURL) {
+async function applyWatercolorEffect(blob: Blob) {
     // Implement the Watercolor effect and return the new URL
 }
 
 // Function to apply blur effect
-function applyBlurEffect(imageURL) {
+async function applyBlurEffect(blob: Blob) {
     // Implement the Blur effect and return the new URL
 }
 
 // Function to apply sharpen effect
-function applySharpenEffect(imageURL) {
+async function applySharpenEffect(blob: Blob) {
     // Implement the Sharpen effect and return the new URL
 }
 
 // Function to apply noise reduction effect
-function applyNoiseReductionEffect(imageURL) {
+async function applyNoiseReductionEffect(blob: Blob) {
     // Implement the Noise Reduction effect and return the new URL
 }
 
 // Function to adjust brightness and contrast
-function applyBrightnessContrastEffect(imageURL) {
+async function applyBrightnessContrastEffect(blob: Blob) {
     // Implement the Brightness/Contrast effect and return the new URL
 }
 
 // Function to adjust saturation
-function applySaturationEffect(imageURL) {
+async function applySaturationEffect(blob: Blob) {
     // Implement the Saturation effect and return the new URL
 }
 
 // Function to adjust hue and saturation
-function applyHueSaturationEffect(imageURL) {
+async function applyHueSaturationEffect(blob: Blob) {
     // Implement the Hue/Saturation effect and return the new URL
 }
 
 // Function to adjust color balance
-function applyColorBalanceEffect(imageURL) {
+async function applyColorBalanceEffect(blob: Blob) {
     // Implement the Color Balance effect and return the new URL
 }
 
 // Function to colorize an image
-function applyColorizeEffect(imageURL) {
+async function applyColorizeEffect(blob: Blob) {
     // Implement the Colorize effect and return the new URL
 }
 
 // Function to apply color splash effect
-function applyColorSplashEffect(imageURL) {
+async function applyColorSplashEffect(blob: Blob) {
     // Implement the Color Splash effect and return the new URL
 }
 
 // Function to crop an image
-function applyCropEffect(imageURL) {
+async function applyCropEffect(blob: Blob) {
     // Implement the Crop effect and return the new URL
 }
 
 // Function to resize an image
-function applyResizeEffect(imageURL) {
+async function applyResizeEffect(blob: Blob) {
     // Implement the Resize effect and return the new URL
 }
 
 // Function to rotate an image
-function applyRotateEffect(imageURL) {
+async function applyRotateEffect(blob: Blob) {
     // Implement the Rotate effect and return the new URL
 }
 
 // Function to flip an image
-function applyFlipEffect(imageURL) {
+async function applyFlipEffect(blob: Blob) {
     // Implement the Flip effect and return the new URL
 }
 
 // Function to auto-enhance an image
-function applyAutoEnhanceEffect(imageURL) {
+async function applyAutoEnhanceEffect(blob: Blob) {
     // Implement the Auto-enhance effect and return the new URL
 }
 
 // Function to denoise an image
-function applyDenoiseEffect(imageURL) {
+async function applyDenoiseEffect(blob: Blob) {
     // Implement the Denoise effect and return the new URL
 }
 
 // Function to auto-correct an image
-function applyAutoCorrectEffect(imageURL) {
+async function applyAutoCorrectEffect(blob: Blob) {
     // Implement the Auto-correct effect and return the new URL
 }
 
 // Function to create a pixelated image
-function applyPixelationEffect(imageURL) {
+async function applyPixelationEffect(blob: Blob) {
     // Implement the Pixelation effect and return the new URL
 }
 
 // Function to remove background
-function applyRemoveBackgroundEffect(imageURL) {
+async function applyRemoveBackgroundEffect(blob: Blob) {
     // Implement the Remove background effect and return the new URL
 }
 
 // Function to add decorative frames
-function applyAddDecorativeFramesEffect(imageURL) {
+async function applyAddDecorativeFramesEffect(blob: Blob) {
     // Implement the Add Decorative Frames effect and return the new URL
 }
 
 // Function to add borders
-function applyAddBordersEffect(imageURL) {
+async function applyAddBordersEffect(blob: Blob) {
     // Implement the Add Borders effect and return the new URL
 }
 
 // Function to compress and save an image
-function applyCompressAndSaveEffect(imageURL) {
+async function applyCompressAndSaveEffect(blob: Blob) {
     // Implement the Compress & save effect and return the new URL
 }
 
 // Function to create an anaglyph image
-function applyCreateAnaglyphEffect(imageURL) {
+async function applyCreateAnaglyphEffect(blob: Blob) {
     // Implement the Create Anaglyph effect and return the new URL
 }
 
 
 // why is this not being accepted as import in the express backend????????????????
-const effectMapping = {
+type EffectFunction = (input: Blob) => any
+const effectMapping: { [key: string]: EffectFunction } = {
     'Grayscale': applyGrayscaleEffect,
     'Sepia': applySepiaEffect,
     'Vintage': applyVintageEffect,
@@ -179,7 +191,7 @@ const effectMapping = {
     'Create Anaglyph': applyCreateAnaglyphEffect,
 };
 
-module.exports = { effectMapping }
+export default effectMapping
 
 
 
