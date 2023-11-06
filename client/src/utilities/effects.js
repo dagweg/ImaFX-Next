@@ -9,7 +9,6 @@ const imageProcessingEffects = [
             'Cartoonize',
             'Oil Painting',
             'Watercolor',
-            'Pop Art',
             'Blur',
             'Sharpen',
             'Noise Reduction'
@@ -39,28 +38,9 @@ const imageProcessingEffects = [
         tier: 'Free'
     },
     {
-        category: "Text and Watermarking",
-        effects: [
-            'Add Text to Images',
-            'Watermarking',
-        ],
-        tier: 'Pro'
-    },
-    {
-        category: "Image Retouching",
-        effects: [
-            'Red-eye Removal',
-            'Blemish Removal',
-            'Wrinkle Reduction',
-            'Teeth Whitening'
-        ],
-        tier: 'Pro'
-    },
-    {
         category: "Image Enhancement",
         effects: [
             'Auto-enhance',
-            'Sharpen',
             'Denoise',
             'Auto-correct'
         ],
@@ -69,28 +49,7 @@ const imageProcessingEffects = [
     {
         category: "Artistic Effects",
         effects: [
-            'Impressionism',
-            'Pointillism',
-            'Cubism',
-            'Mosaic',
             'Pixelation'
-        ],
-        tier: 'Pro'
-    },
-    {
-        category: "Collage and Montage",
-        effects: [
-            'Create Image Collages',
-            'Combine Multiple Images'
-        ],
-        tier: 'Pro'
-    },
-    {
-        category: "Geometric Transforms",
-        effects: [
-            'Distortions',
-            'Perspective Correction',
-            'Tilt-shift'
         ],
         tier: 'Pro'
     },

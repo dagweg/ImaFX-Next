@@ -3,7 +3,6 @@ import imageProcessingEffects from '../utilities/effects';
 import '../styles/workspace.css'
 import { grid } from 'ldrs'
 
-
 function Workspace() {
 
     const [imageURL, setImageURL] = useState('');
@@ -35,7 +34,7 @@ function Workspace() {
                 <section className='modifier-pane overflow-y-scroll'>
                     <h1>Modifiers</h1>
                     <div className='relative'>
-                        <DropDownMenu dropDownMenu={dropDownMenu} setDropDownMenu={setDropDownMenu} dropDownBtnContainer={dropDownBtnContainer} />
+                        <DropDownMenu dropDownMenu={dropDownMenu} setDropDownMenu={setDropDownMenu} dropDownBtnContainer={dropDownBtnContainer} imageURL={imageURL} setImageURL={setImageURL} />
                     </div>
                 </section >
                 <section className='canvas'>
@@ -57,8 +56,23 @@ function Workspace() {
 }
 export default Workspace
 
+const handleEffectClick = (effect, imageURL, setImageURL) => {
+    const requestURL = `http://localhost:5000/${effect}?imageURL=${encodeURIComponent(imageURL)}`;
 
-const DropDownMenu = ({ dropDownMenu, setDropDownMenu, dropDownBtnContainer }) => {
+    fetch(requestURL, {
+        method: "GET"
+    })
+        .then((response) => response.json())
+        .then((data) => {
+            console.log("Received", data, "from server")
+            // setImageURL(data.URL)
+        })
+        .catch((error) => console.error("Error with effect:", effect, error));
+}
+
+
+
+const DropDownMenu = ({ dropDownMenu, setDropDownMenu, dropDownBtnContainer, imageURL, setImageURL }) => {
 
     return (
         <>
@@ -75,7 +89,7 @@ const DropDownMenu = ({ dropDownMenu, setDropDownMenu, dropDownBtnContainer }) =
                             <div className={`dropdown-menu-buttons-container`} key={i} ref={dropDownBtnContainer}>
 
                                 {obj.effects.map((effect, j) => (
-                                    <div key={j} className='dropdown-menu-button'>
+                                    <div key={j} className='dropdown-menu-button' onClick={() => handleEffectClick(effect, imageURL, setImageURL)}>
                                         <label htmlFor="">{effect}</label>
                                     </div>
                                 ))}

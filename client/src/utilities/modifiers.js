@@ -1,4 +1,6 @@
-export function applyGrayscale(imageURL) { }
+export function applyGrayscale(imageURL) {
+
+}
 
 export function applySepia(imageURL) { }
 
