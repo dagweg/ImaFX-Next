@@ -1,4 +1,5 @@
 import sharp from "../../node_modules/sharp/lib/index";
+import Jimp from 'jimp'
 // import blobToBuffer from 'blob-to-buffer'
 
 
@@ -24,7 +25,11 @@ async function applyGrayscaleEffect(buffer: Buffer) {
 
 // Function to create a sepia image
 async function applySepiaEffect(buffer: Buffer) {
-    // Implement the Sepia effect and return the new URL
+    Jimp.read(buffer)
+        .then(buffer => {
+            buffer.sepia()
+        })
+    // getb
 }
 
 // Function to create a vintage image
