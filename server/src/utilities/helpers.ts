@@ -2,6 +2,8 @@ import fetch from "../../node_modules/node-fetch";
 
 export async function urlToBlob(url: string): Promise<Blob> {
     try {
+        if (url.startsWith('blob:')) throw new Error(url + "\tAlready a blob")
+
         const response = await fetch(`${url}`)
 
         if (response.status >= 200 && response.status < 300) {
