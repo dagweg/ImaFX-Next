@@ -1,0 +1,87 @@
+@import url(./variables.css);
+
+.login-panel {
+    position: relative;
+    width: 35rem;
+    height: 40rem;
+    z-index: 10;
+    padding-left: 4rem;
+    overflow: hidden;
+    scale: 1;
+    transform-origin: left center;
+    animation: animatePanel 0.5s ease-in-out;
+    @apply bg-gray-200 mx-auto rounded-md shadow-lg
+}
+
+@keyframes animatePanel {
+    0% {
+        /* transform: scaleX(1);
+        transform: rotateY(0deg); */
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        /* transform: scaleX(1); */
+        /* transform: rotateY(180deg); */
+    }
+}
+
+.login-panel-back {
+    width: 5rem;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    @apply bg-gray-300 mx-auto
+}
+
+.text-box-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+    @apply my-10
+}
+
+.text-box-wrapper label {
+    width: 100%;
+    @apply text-xl
+}
+
+.text-box {
+    height: 4rem;
+    width: 100%;
+    background-color: var(--light-gray);
+    border: solid;
+    border-width: 0 0 2px 0;
+    border-color: rgb(113, 114, 151);
+    padding: 0 1rem;
+    @apply rounded-sm outline-none
+}
+
+.text-box-wrapper .login-button {
+    @apply text-white font-black text-xl py-5 px-20 w-full bg-gray-400 hover:bg-gray-500
+}
+
+.text-box-wrapper .login-button:active {
+    outline: solid;
+    outline-width: 10px;
+    outline-color: var(--light-gray);
+    /* outline-offset: 1px; */
+    transition: 75ms ease-in-out;
+}
+
+.login-panel a {
+    color: var(--blue);
+}
+
+.text-box-wrapper .sign-up {
+    @apply h-full hover:bg-gray-100 text-black py-1 text-xs
+}
+
+.text-box-wrapper .sign-up:active {
+    @apply bg-gray-400 text-white
+}

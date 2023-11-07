@@ -1,0 +1,83 @@
+@import url('./variables.css');
+
+.pricing-choices {
+    @apply flex justify-center;
+}
+
+.pricing-choices .badge {
+    color: white;
+    @apply font-black text-xl text-center inline-block px-5 rounded-full my-2
+}
+
+.pricing-choices .price {
+    @apply font-black text-5xl pb-2
+}
+
+.pricing-choices .price span {
+    @apply text-base
+}
+
+.pricing-choices .description {
+    @apply py-4
+}
+
+.pricing-choices .tier-features {
+    @apply py-4
+}
+
+.check-mark {
+    @apply text-green-600 pr-2 font-bold
+}
+
+.pricing-choices .tier-features .feature {
+    @apply block
+}
+
+.card-price {
+    position: relative;
+    /* background-color: #fafafa; */
+    background: linear-gradient(to right, #8e9eab, #eef2f3);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: 300%;
+    background-position: right;
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: var(--dark);
+    width: 25rem;
+    height: fit-content;
+    max-height: fit-content;
+    border-radius: 10px;
+    box-shadow: 4px 5px 15px 1px #2224;
+    margin: 1rem;
+    padding: 2rem 4rem;
+    box-sizing: border-box;
+    cursor: pointer;
+    z-index: 10;
+    overflow: hidden;
+    transition: 150ms ease-in-out;
+}
+
+.card-price::before {
+    content: '';
+    position: absolute;
+    background: linear-gradient(to right, #8e9eab, #eef2f3);
+    background-size: 400%;
+    background-position: right;
+    color: var(--very-light);
+    width: 10%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+
+.card-price:hover {
+    outline: dotted;
+    outline-offset: 2px;
+    outline-width: 2px;
+    scale: 1.04;
+
+}
+
+.card-price:active {
+    scale: 1;
+}

@@ -1,0 +1,162 @@
+@import url(./variables.css);
+
+.panel-wrapper {
+    @apply relative flex flex-col justify-center h-screen
+}
+
+.decorator {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    scale: 1.015;
+    z-index: 1;
+    border: solid;
+    border-color: var(--dark) transparent var(--dark) transparent;
+    border-width: 1rem 0 1rem 0;
+    @apply top-0 left-0 rounded-lg
+}
+
+@keyframes change-colors {
+    0% {
+        border-width: 1rem 0 1rem 0;
+        border-color: var(--dark) transparent var(--dark) transparent;
+    }
+
+    50% {
+        border-color: transparent var(--dark) transparent var(--dark);
+        border-width: 0rem 1rem 0rem 1rem;
+    }
+
+    100% {
+        border-width: 1rem 0 1rem 0;
+        border-color: var(--dark) transparent var(--dark) transparent;
+    }
+}
+
+.panel {
+    width: 35rem;
+    display: flex;
+    margin: 0 auto;
+    position: relative;
+}
+
+.panel-internal {
+    /* height: 55rem; */
+    width: 100%;
+    position: relative;
+    z-index: 100;
+    padding-left: 4rem;
+    /* overflow: hidden; */
+    scale: 1;
+    transform-origin: right center;
+    animation: animatePanel 0.5s ease-in-out;
+    @apply bg-gray-200 mx-auto rounded-md shadow-lg z-10
+}
+
+.panel iframe {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    @apply pl-12 z-10
+}
+
+.main-container {
+    @apply relative h-full w-full bg-gray-100
+}
+
+@keyframes animatePanel {
+    0% {
+        /* transform: scaleX(1);
+        transform: rotateY(0deg); */
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        /* transform: scaleX(1); */
+        /* transform: rotateY(180deg); */
+    }
+}
+
+.signup-panel-back {
+    width: 5rem;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    @apply bg-gray-300 mx-auto
+}
+
+.text-box-wrapper {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+    @apply my-10
+}
+
+.text-box-wrapper label {
+    width: 100%;
+    position: relative;
+    @apply text-base
+}
+
+.text-box {
+    height: 3rem;
+    width: 100%;
+    position: relative;
+    background-color: var(--light-gray);
+    border: solid;
+    border-width: 0 0 2px 0;
+    border-color: rgb(113, 114, 151);
+    padding: 0 1rem;
+    @apply rounded-sm outline-none
+}
+
+.text-box-wrapper .signup-button {
+    @apply text-white font-black text-sm py-4 px-20 w-full bg-gray-400 hover:bg-gray-500
+}
+
+.text-box-wrapper .signup-button:active {
+    outline: solid;
+    outline-width: 10px;
+    outline-color: var(--light-gray);
+    position: relative;
+    transition: 75ms ease-in-out;
+}
+
+.signup-panel a {
+    position: relative;
+    color: var(--blue);
+}
+
+.text-box-wrapper .sign-up {
+    position: relative;
+    @apply h-full hover:bg-gray-100 text-black py-1 text-xs
+}
+
+.text-box-wrapper .login:active {
+    position: relative;
+    @apply bg-gray-400 text-white
+}
+
+
+.input-validator-details {
+    min-height: 5rem;
+    @apply bg-blue-100 w-60 h-auto absolute -right-80 rounded-md shadow-md text-gray-900 p-2 z-10 flex flex-col justify-center
+}
+
+.input-validator-details::before {
+    content: '';
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    left: -0.6rem;
+    top: 1.5rem;
+    transform: rotate(45deg);
+    background-color: inherit;
+    z-index: -1;
+}
