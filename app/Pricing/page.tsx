@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../styles/pricing.css'
+import './pricing.css'
 
 function Pricing() {
     const freeOptions = [

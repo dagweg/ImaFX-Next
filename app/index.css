@@ -1,0 +1,24 @@
+@keyframes pop-up-anim {
+    0% {
+        transform: scaleY(0);
+    }
+
+    100% {
+        transform: scaleY(1);
+    }
+}
+
+.pop-up {
+    animation: popUp 0.1s ease-out;
+}
+
+.logo-image {
+    background-image: url('./assets/logo.png');
+    width: 12rem;
+    height: 2rem;
+    outline: none;
+    background-size: contain;
+    padding: 0;
+    margin: 0;
+    background-repeat: no-repeat;
+}

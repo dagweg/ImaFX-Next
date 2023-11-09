@@ -1,11 +1,9 @@
+'use client'
 import React from 'react'
-import '../../src/styles/account.css'
-import { Outlet, useNavigate } from 'react-router-dom';
-import links from '../../src/links';
+import './account.css'
+import links from '../../utilities/links';
 
 function Account() {
-
-    const navigate = useNavigate()
 
     const accountPageMenuItems = Object.keys(links.account).map(key => links.account[key])
 
@@ -17,7 +15,7 @@ function Account() {
                     <ul className='flex flex-col justify-center h-full'>
 
                         {accountPageMenuItems.map((menuItem, index) => (
-                            <li style={{ width: '75%' }} className='m-1 mx-auto py-5 cursor-pointer transition-all duration-75 hover:bg-gray-50 hover:bg-opacity-50 rounded-md text-left p-2' key={index} onClick={() => navigate(menuItem)}>
+                            <li style={{ width: '75%' }} className='m-1 mx-auto py-5 cursor-pointer transition-all duration-75 hover:bg-gray-50 hover:bg-opacity-50 rounded-md text-left p-2' key={index}>
                                 <h1>{menuItem}</h1>
                             </li>
                         ))}

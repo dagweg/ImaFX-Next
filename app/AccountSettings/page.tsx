@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../styles/account.css'
+import '../Account/account.css'
 import { Outlet, useNavigate } from 'react-router-dom';
 import links from '../../utilities/links';
 

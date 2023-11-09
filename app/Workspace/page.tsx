@@ -1,9 +1,10 @@
+'use client'
+
 import React, { useState, useRef, useEffect } from 'react'
 import imageProcessingEffects from '../../utilities/effects';
-import axios from 'axios'
-import '../../styles/workspace.css'
+import './workspace.css'
 import { grid } from 'ldrs'
-import base64toblob from 'base64toblob'
+
 
 function Workspace() {
 
@@ -60,31 +61,31 @@ export default Workspace
 
 const handleEffectClick = async (effect, imageFile, setImageFile) => {
     if (imageFile instanceof File) {
-        let file = imageFile
-        if (file) {
-            const reader = new FileReader();
+        // let file = imageFile
+        // if (file) {
+        //     const reader = new FileReader();
 
-            reader.onload = (event) => {
-                if (event.target !== null) {
-                    const arrayBuffer = event.target.result;
-                    file = arrayBuffer as unknown as File
-                } else {
-                    throw ('event.target is null for filereader')
-                }
-            };
+        //     reader.onload = (event) => {
+        //         if (event.target !== null) {
+        //             const arrayBuffer = event.target.result;
+        //             file = arrayBuffer as unknown as File
+        //         } else {
+        //             throw ('event.target is null for filereader')
+        //         }
+        //     };
 
-            reader.readAsArrayBuffer(file);
-        }
+        //     reader.readAsArrayBuffer(file);
+        // }
     }
     try {
         const requestURL = `http://localhost:5000/${effect}`;
         const formData = new FormData()
         formData.append('imageFile', imageFile)
-        axios.post(requestURL, formData)
-            .then(response => {
-                setImageFile(response.data.newURL)
-            })
-            .catch(error => console.log(error))
+        // axios.post(requestURL, formData)
+        //     .then(response => {
+        //         setImageFile(response.data.newURL)
+        //     })
+        //     .catch(error => console.log(error))
 
     } catch (error) {
 
@@ -151,15 +152,15 @@ const Loader = () => {
 }
 
 const Image = ({ imageFile }) => {
-    const isBase64 = value => /^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})$/.test(value);
-    let imageUrl = imageFile
-    if (isBase64(imageFile)) {
-        console.log("YES ITS BASE 64")
-        imageUrl = base64toblob(imageFile, 'image/jpg')
-    }
+    // const isBase64 = value => /^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})$/.test(value);
+    // let imageUrl = imageFile
+    // if (isBase64(imageFile)) {
+    //     console.log("YES ITS BASE 64")
+    //     imageUrl = base64toblob(imageFile, 'image/jpg')
+    // }
     return (
         <>
-            <img src={`${URL.createObjectURL(imageUrl)}`} alt='' className='image'></img>
+            <img src={`${URL.createObjectURL(imageFile)}`} alt='' className='image'></img>
         </>
     )
 }
