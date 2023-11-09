@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -12,8 +14,19 @@ export const metadata: Metadata = {
 export default function RootLayout({ children, }: { children: React.ReactNode }) {
     return (
         <html lang="en">
-            <body className={inter.className}>
-                {children}
+            <head>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <title>Document</title>
+                <script src="https://kit.fontawesome.com/bb488c4407.js" />
+                <style>
+                    @import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Inter&family=Lilita+One&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500&family=Mooli&family=Open+Sans&family=Play:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,800;1,100;1,200;1,300;1,400&family=Quicksand&family=Raleway&family=Rubik&display=swap');
+                </style>
+            </head>
+
+            <body>
+                <Header />
+                <main>{children}</main>
+                <Footer />
             </body>
         </html>
     )

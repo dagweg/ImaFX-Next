@@ -3,11 +3,11 @@
 import React, { useEffect, useState } from 'react';
 import './index.css';
 
-function Home() {
+function Index() {
     const [text, setText] = useState<string[]>([]);
-    const [textClicked, setTextClicked] = useState(false);
-    const [isTyping, setIsTyping] = useState(false);
-    const toWrite = ["WWelcome to ImaFx", "Where your pictures come to life!", "Transforming Pixels into Dreams!"];
+    const [textClicked, setTextClicked] = useState<Boolean>(false);
+    const [isTyping, setIsTyping] = useState<Boolean>(false);
+    const toWrite: String[] = ["WWelcome to ImaFx", "Where your pictures come to life!", "Transforming Pixels into Dreams!"];
 
     useEffect(() => {
         let i = 0;
@@ -78,4 +78,4 @@ function Home() {
     );
 }
 
-export default Home;
+export default Index;
