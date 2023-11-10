@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
-import { Link, unstable_HistoryRouter } from 'react-router-dom'
+import Link from 'next/link'
 import links from '../../utilities/links'
 import './signup.css'
 
@@ -152,7 +152,7 @@ function SignUp({ loadLoginPanel }) {
                                 <button className='signup-button' onClick={validateInputParameters}>Create Account</button>
                             </div>
                             <div className='text-box-wrapper '>
-                                <p className='w-full'>Already have an account? <Link to={'/' + links.root.login}><button className='sign-up' onClick={loadLoginPanel}>Login</button></Link></p>
+                                <p className='w-full'>Already have an account? <Link href={'/' + links.root.login}><button className='sign-up' onClick={loadLoginPanel}>Login</button></Link></p>
                             </div>
                         </div>
                     </div>
