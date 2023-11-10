@@ -33,7 +33,7 @@ function Contact() {
                                 Thank you for choosing ImaFX for all your image editing needs. Start creating stunning images today, and let your creativity shine!
                             </h1>
 
-                            <div className='contact-us-card grid grid-cols-2 w-full p-10 bg-gray-50 my-10 bg-opacity-25 rounded-lg text-gray-700 shadow-2xl'>
+                            <div className='contact-us-card grid grid-cols-1 lg:grid-cols-2 w-full p-10 bg-gray-50 my-10 bg-opacity-25 rounded-lg text-gray-700 shadow-2xl'>
                                 <div className='subscribe-newsletter flex flex-col justify-center p-4 border  border-black border-t-0 border-l-0 border-b-0 border-r-2'>
                                     <h1 className='font-black text-xl'>Subscribe to our newsletter</h1>
                                     <div className='mt-3'>
@@ -44,9 +44,9 @@ function Contact() {
                                         <button className='subscribe' >Subscribe</button>
                                     </div>
                                 </div>
-                                <div className='p-4'>
+                                <div className='p-8'>
                                     <h1 className='font-black text-xl text-center'>Contact us</h1>
-                                    <div className='flex flex-col items-center py-10'>
+                                    <div className='flex flex-col items-center'>
                                         <p><strong>Email:</strong> imafx.io@gmail.com</p>
                                         <p><strong>Address:</strong> Ethiopia, Addis Ababa, 4kilo</p>
                                     </div>

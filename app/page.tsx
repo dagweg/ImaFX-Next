@@ -2,6 +2,8 @@
 
 import React, { useEffect, useState } from 'react';
 import './index.css';
+import Image from 'next/image';
+import ImSky from './assets/sky-wow.webp'
 
 function Index() {
     const [text, setText] = useState<string[]>([]);
@@ -65,7 +67,43 @@ function Index() {
 
     return (
         <>
-            <div className="">
+            <>
+                <section className='section-1 relative h-screen grid grid-cols-5 grid-rows-1'>
+                    <div className='images-wrapper shadow-sm'>
+                        <div className='images '>
+                            <div className="orig"></div>
+                            <div className="gray"></div>
+                            <div className="curves"></div>
+                        </div>
+                    </div>
+                    <div className='heading relative col-span-3 flex flex-col justify-center items-center pl-10'>
+                        <h1 className='font-bold text-black'>Welcome to <strong className='font-black text-pink-600'>ImaFX</strong></h1>
+                        <p className='font-light'>Redefining image processing</p>
+                    </div>
+                </section>
+                <section className='section-2 relative h-screen bg-gray-100 grid grid-cols-5'>
+                    <div className='heading relative w-full h-full flex flex-col justify-center items-center text-gray-700 px-32 col-span-3'>
+                        <h1 className='font-bold'>Where your pictures come to <strong className='font-black'>Life!</strong></h1>
+                        <p className='font-light'>Utilizing the power of AI to revolutionize how images look</p>
+                    </div>
+                    <div className='decorator-wrapper col-span-2 w-full h-full'>
+                        <div className='right-box'></div>
+                    </div>
+                </section>
+                <section className='section-3 relative h-screen bg-transparent grid grid-cols-5'>
+                    <div className='decorator-wrapper col-span-2 w-full h-full'>
+                        <div className='right-box'></div>
+                    </div>
+                    <div className='heading relative w-full h-full flex flex-col justify-center items-center  px-32  text-white col-span-3'>
+                        <h1 className='font-black'>Transforming Pixels into<strong className='font-black  '> Dreams!</strong></h1>
+                    </div>
+                </section>
+            </>
+        </>
+    );
+}
+
+{/* <div className="">
                 <div className="card" onClick={handleTextClick}>
                     {text.map((char, index) => (
                         <h1 key={index} style={{ fontFamily: "Roboto" }} className="pointer-events-none">
@@ -73,9 +111,6 @@ function Index() {
                         </h1>
                     ))}
                 </div>
-            </div>
-        </>
-    );
-}
+            </div> */}
 
 export default Index;

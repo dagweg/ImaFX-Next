@@ -33,14 +33,14 @@ function Workspace() {
 
     return (
         <section className='relative flex flex-col justify-center h-screen' style={{ fontSize: 15 }}>
-            <div className='absolute top-0 right-0 left-0 bottom-0 flex '>
-                <section className='modifier-pane overflow-y-scroll'>
+            <div className='absolute top-0 right-0 left-0 bottom-0 grid grid-cols-8 '>
+                <section className='overflow-x-hidden overflow-y-scroll lg:block col-span-0 hidden md:col-span-3 md:block lg:col-span-2 2xl:col-span-1'>
                     <h1>Modifiers</h1>
                     <div className='relative'>
                         <DropDownMenu dropDownMenu={dropDownMenu} setDropDownMenu={setDropDownMenu} dropDownBtnContainer={dropDownBtnContainer} imageFile={imageFile} setImageFile={setImageFile} />
                     </div>
                 </section >
-                <section className='canvas'>
+                <section className='canvas col-span-8 md:col-span-5 lg:col-span-6 2xl:col-span-7 '>
                     <div className='canvas-tab'>
                         <label>Canvas</label>
                         {imageFile !== '' && <i className='fa-solid fa-trash' onClick={() => setImageFile('')}></i>}

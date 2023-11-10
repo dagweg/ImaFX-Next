@@ -25,3 +25,218 @@
   margin: 0;
   background-repeat: no-repeat;
 }
+
+.section-1,
+.section-2,
+.section-3 {
+  overflow: hidden;
+  /* background: linear-gradient(109.6deg, rgb(215, 109, 119) 11.3%, rgb(255, 175, 123) 100.2%); */
+}
+
+.images-wrapper .images {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  animation: slideshow 30s infinite;
+}
+
+.images-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  grid-column: span 2 / span 2
+}
+
+@keyframes slideshow {
+  0% {
+    transform: translateX(0%);
+  }
+
+  20% {
+    transform: translateX(-100%);
+  }
+
+  40% {
+    transform: translateX(-200%);
+  }
+
+  60% {
+    transform: translateX(-200%);
+  }
+
+  80% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.images> :nth-child(n) {
+  width: 100%;
+  min-width: 100%;
+  height: 100%;
+  min-height: 20rem;
+}
+
+.images .orig {
+  background: url(/_next/static/media/sky-orig.4fa12aa3.jpg);
+  background-size: cover;
+  background-position-x: right;
+}
+
+.images .gray {
+  background: url(/_next/static/media/sky-gray.653f90cb.jpg);
+  background-size: cover;
+  background-position-x: right;
+}
+
+.images .curves {
+  background: url(/_next/static/media/sky-curves.dff136be.jpg);
+  background-size: cover;
+  background-position-x: right;
+}
+
+.images .oil {
+  background: url(/_next/static/media/sky-oil.87918a80.jpg);
+  background-size: cover;
+  background-position-x: right;
+}
+
+.section-1 .heading {
+  font-size: 4vw;
+}
+
+.section-1 strong {
+  background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
+  background-size: 200%;
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: bgtxtanim 5s infinite alternate;
+}
+
+.section-2 strong {
+  background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
+  background-size: 200%;
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: bgtxtanim 5s infinite alternate;
+}
+
+.section-3 strong {
+  background-image: linear-gradient(-90deg, #667eea 0%, #764ba2 100%);
+  background-size: 200%;
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: bgtxtanim 5s infinite alternate;
+}
+
+@keyframes bgtxtanim {
+  0% {
+    background-position-x: left;
+  }
+
+  100% {
+    background-position-x: right;
+  }
+}
+
+.heading h1 {
+  animation: reveal linear both;
+  animation-timeline: view(block);
+  animation-range: entry 100% cover 50%;
+}
+
+strong {
+  font-family: Agbalumo;
+}
+
+.section-1 p {
+  font-size: 2vw;
+}
+
+.section-2 .heading {
+  font-size: 3vw;
+}
+
+.section-2 p {
+  font-size: 2vw;
+}
+
+.section-2 p {
+  font-size: 2vw;
+}
+
+.section-3 .heading {
+  font-size: 4vw;
+}
+
+.section-1 .decorator1 {
+  position: absolute;
+  width: 75%;
+  height: 75%;
+  background-color: #eef4;
+  filter: blur(100px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes bkdanim {
+  0% {
+    background-position-x: left;
+    background-size: 125%;
+  }
+
+  25% {
+    background-size: 115%;
+  }
+
+  50% {
+    background-position-x: right;
+    background-size: 100%;
+  }
+
+  75% {
+    background-size: 115%;
+  }
+
+  100% {
+    background-size: 125%;
+    background-position-x: left;
+  }
+}
+
+.section-2 .decorator-wrapper .right-box {
+  height: 100%;
+  width: 100%;
+  background: url(/_next/static/media/ai.a37b2be1.jpg);
+  background-size: cover;
+  background-position-x: left;
+  --tw-bg-opacity: 1;
+  background-color: rgba(107, 114, 128, var(--tw-bg-opacity));
+  position: relative;
+  --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+}
+
+.section-3 .decorator-wrapper .right-box {
+  height: 100%;
+  width: 100%;
+  background: url(/_next/static/media/cloud-sky-scenery-wallpaper-2560x1080_14.6d64a9f6.jpg);
+  background-size: cover;
+  background-position-x: center;
+  --tw-bg-opacity: 1;
+  background-color: rgba(107, 114, 128, var(--tw-bg-opacity));
+  position: relative;
+  --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+}

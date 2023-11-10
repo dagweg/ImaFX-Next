@@ -36,13 +36,15 @@
 .card-price {
     position: relative;
     /* background-color: #fafafa; */
-    background: linear-gradient(to right, #8e9eab, #eef2f3);
+    /* background: linear-gradient(to right, #8e9eab, #eef2f3); */
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background-size: 300%;
+    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+
     background-position: right;
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     color: var(--dark);
-    width: 25rem;
+    width: 20rem;
     height: fit-content;
     max-height: fit-content;
     border-radius: 10px;
@@ -50,10 +52,16 @@
     margin: 1rem;
     padding: 2rem 4rem;
     box-sizing: border-box;
+    font-size: 12px;
+
     cursor: pointer;
     z-index: 10;
     overflow: hidden;
     transition: 150ms ease-in-out;
+}
+
+.card-price * {
+    font-family: 'roboto';
 }
 
 .card-price::before {
@@ -71,8 +79,9 @@
 }
 
 .card-price:hover {
-    outline: dotted;
-    outline-offset: 2px;
+    outline: dashed;
+    outline-color: rgb(54, 54, 54);
+    /* outline-offset: 2px; */
     outline-width: 2px;
     scale: 1.04;
 

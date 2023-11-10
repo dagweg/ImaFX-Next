@@ -18,11 +18,10 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <title>Document</title>
                 <script src="https://kit.fontawesome.com/bb488c4407.js" />
-                <style>
-                    @import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Inter&family=Lilita+One&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500&family=Mooli&family=Open+Sans&family=Play:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,800;1,100;1,200;1,300;1,400&family=Quicksand&family=Raleway&family=Rubik&display=swap');
-                </style>
-            </head>
+                <link rel="preconnect" href="https://fonts.googleapis.com" />
 
+                <link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Comfortaa&family=Inter&family=Lilita+One&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500&family=Mooli&family=Open+Sans&family=Play:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,800;1,100;1,200;1,300;1,400&family=Quicksand&family=Raleway&family=Rubik&display=swap" rel="stylesheet" />
+            </head>
             <body>
                 <Header />
                 <main>{children}</main>
