@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useEffect, useState } from 'react'
 import { Link, unstable_HistoryRouter } from 'react-router-dom'
 import links from '../../utilities/links'

@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import '../Account/account.css'
 import { Outlet, useNavigate } from 'react-router-dom';
